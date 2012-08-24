@@ -1,0 +1,52 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/sabnzbd"
+pidfile="$run_dir/sabnzbd.pid"
+etc_dir="/etc/sabnzbd"
+var_dir="/var/sabnzbd"
+log_dir="/var/log/sabnzbd"
+code_dir=/usr/share/sabnzbd
+program="$code_dir/SABnzbd.py"
+bin=`which $python_bin`
+
+check_config() {
+	if [ ! -d "${run_dir}" ]; then
+                mkdir "${run_dir}"
+        fi
+
+        # Permission stuff. Should ensure that the daemon user always have write permissions.
+        # Quick and ugly but should get the job done.
+
+        chown -R ${user}:${group} "${run_dir}"
+        chown -R ${user}.${group} "${var_dir}"
+        chown -R ${user}.${group} "${etc_dir}"
+        chown -R ${user}.${group} "${log_dir}"
+}
+
+
+start() {
+	check_config
+        ebegin "Starting SABnzbd"
+        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile} -u ${user} -g ${group}\
+	--exec ${bin} ${program} -- \
+	-f ${config_file}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping SABnzbd"
+        start-stop-daemon --stop --pidfile ${pidfile}
+        eend $?
+}
+
+restart() {
+        stop
+        start
+}
