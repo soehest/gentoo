@@ -1,0 +1,12 @@
+# ChangeLog for net-nntp/headphones
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*headphones-9999 (25 Aug 2012)
+
+  25 Aug 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  +headphones-9999, +metadata.xml, +files/headphones.conf,
+  +files/headphones.ini, +files/headphones.init,
+  +files/headphones.logrotate
+  Initial commit of headphones-9999 ebuild.
+

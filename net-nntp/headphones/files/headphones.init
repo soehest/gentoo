@@ -1,0 +1,54 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/headphones"
+pidfile="$run_dir/headphones.pid"
+etc_dir="/etc/headphones"
+var_dir="/var/headphones"
+log_dir="/var/log/headphones"
+code_dir="/usr/share/headphones"
+program="$code_dir/Headphones.py"
+bin=`which $python_bin`
+
+check_config() {
+	
+	if [ ! -d "${run_dir}" ]; then
+        	mkdir "${run_dir}"
+	fi
+
+	# Permission stuff. Should ensure that the daemon user always have write permissions.
+	# Quick and ugly but should get the job done.
+
+	chown -R ${user}:${group} "${run_dir}"
+        chown -R ${user}.${group} "${var_dir}"
+	chown -R ${user}.${group} "${etc_dir}"
+	chown -R ${user}.${group} "${log_dir}"
+	chown -R ${user}.${group} "${code_dir}"
+}
+
+start() {
+	check_config
+
+        ebegin "Starting Headphones"
+        start-stop-daemon --start --pidfile ${pidfile} -u ${user} -g ${group}\
+	--exec ${bin} ${program} -- \
+	-d --pidfile ${pidfile} --datadir ${var_dir} --nolaunch --config ${config_file}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Headphones"
+        start-stop-daemon --stop --pidfile ${pidfile}
+        eend $?
+}
+
+restart() {
+        stop
+        start
+}
