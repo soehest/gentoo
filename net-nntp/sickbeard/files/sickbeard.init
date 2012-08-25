@@ -44,7 +44,7 @@ start() {
 
 stop() {
         ebegin "Stopping SickBeard"
-        start-stop-daemon --stop --pidfile ${pidfile}
+        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
         eend $?
 }
 
