@@ -1,0 +1,53 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/couchpotato"
+pidfile="$run_dir/couchpotato.pid"
+etc_dir="/etc/couchpotato"
+var_dir="/var/couchpotato"
+log_dir="/var/log/couchpotato"
+code_dir="/usr/share/couchpotato"
+program="$code_dir/CouchPotato.py"
+bin=`which $python_bin`
+
+check_config() {
+	
+	if [ ! -d "${run_dir}" ]; then
+        	mkdir "${run_dir}"
+	fi
+
+	# Permission stuff. Should ensure that the daemon user always have write permissions.
+	# Quick and ugly but should get the job done.
+
+	chown -R ${user}:${group} "${run_dir}"
+        chown -R ${user}.${group} "${var_dir}"
+	chown -R ${user}.${group} "${etc_dir}"
+	chown -R ${user}.${group} "${code_dir}"
+}
+
+start() {
+	check_config
+
+        ebegin "Starting CouchPotato"
+        start-stop-daemon --start --pidfile ${pidfile} -u ${user} -g ${group}\
+	--exec ${bin} ${program} -- \
+	--daemon --pid_file ${pidfile} --data_dir ${var_dir} --config_file ${config_file}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping CouchPotato"
+        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
+        eend $?
+}
+
+restart() {
+        stop
+        start
+}
