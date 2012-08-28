@@ -1,6 +1,6 @@
 # Experimental Gentoo Linux Ebuilds #
 
-This Git Git repository contains experimental ebuilds for [Gentoo Linux](http://www.gentoo.org/). At this time it consists of the following ebuilds
+This Git repository contains experimental ebuilds for [Gentoo Linux](http://www.gentoo.org/). At this time it consists of the following ebuilds
 
 - [sabnzbd](http://sabnzbd.org/)
 - [yenc](http://www.golug.it/yenc.html)
@@ -12,16 +12,20 @@ sabnzbd and yenc has been forked from the [sunrise](http://overlays.gentoo.org/p
 
 These ebuilds are also located in the Gentoo overlay soehest. To use the overlay type the following commands
 
-`emerge git layman  
-echo "source /var/lib/layman/make.conf" >/etc/make.conf  
-layman -f  
+```bash
+emerge git layman
+echo "source /var/lib/layman/make.conf" >/etc/make.conf
+layman -f
 layman -a soehest
-`
+```
 
 To install one of the ebuilds from this overlay you need to add it to /etc/portage/package.keyword  
 
-`echo "net-nntp/sabnzbd" /etc/portage/package.keywords  
-emerge sabnzbd  `
+```ruby
+echo "net-nntp/sabnzbd" /etc/portage/package.keywords
+echo "net-nntp/yenc" /etc/portage/package.keywords
+emerge sabnzbd
+```
 
 More info on Gentoo Layman can be found [here](http://www.gentoo.org/proj/en/overlays/userguide.xml)
 
