@@ -14,7 +14,7 @@ These ebuilds are also located in the Gentoo overlay soehest. To use the overlay
 
 ```bash
 emerge git layman
-echo "source /var/lib/layman/make.conf" >/etc/make.conf
+echo "source /var/lib/layman/make.conf" >> /etc/make.conf
 layman -f
 layman -a soehest
 ```
