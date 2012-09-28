@@ -22,8 +22,8 @@ layman -a soehest
 To install one of the ebuilds from this overlay you need to add it to /etc/portage/package.keyword  
 
 ```ruby
-echo "net-nntp/sabnzbd" /etc/portage/package.keywords
-echo "net-nntp/yenc" /etc/portage/package.keywords
+echo "net-nntp/sabnzbd" >> /etc/portage/package.keywords
+echo "net-nntp/yenc" >> /etc/portage/package.keywords
 emerge sabnzbd
 ```
 
