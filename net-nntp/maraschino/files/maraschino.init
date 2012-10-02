@@ -1,0 +1,53 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/maraschino"
+pidfile="$run_dir/maraschino.pid"
+var_dir="/var/maraschino"
+log_dir="/var/log/maraschino"
+log_file="maraschino.log"
+code_dir="/usr/share/maraschino"
+program="$code_dir/Maraschino.py"
+bin=`which $python_bin`
+
+check_config() {
+	
+	if [ ! -d "${run_dir}" ]; then
+        	mkdir "${run_dir}"
+	fi
+
+	# Permission stuff. Should ensure that the daemon user always have write permissions.
+	# Quick and ugly but should get the job done.
+
+	chown -R ${user}:${group} "${run_dir}"
+        chown -R ${user}.${group} "${var_dir}"
+	chown -R ${user}.${group} "${log_dir}"
+	chown -R ${user}.${group} "${code_dir}"
+}
+
+start() {
+	check_config
+
+        ebegin "Starting Maraschino"
+        start-stop-daemon --start --pidfile ${pidfile} -u ${user} -g ${group}\
+	--exec ${bin} ${program} -- \
+	-d --pidfile=${pidfile} --log=${log_dir}/${log_file} --datadir ${var_dir} --port=${port}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Maraschino"
+        start-stop-daemon --stop --pidfile ${pidfile}
+        eend $?
+}
+
+restart() {
+        stop
+        start
+}
