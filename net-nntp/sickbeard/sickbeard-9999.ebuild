@@ -43,8 +43,8 @@ src_install() {
 	keepdir /var/${PN}
 	fowners -R ${PN}:${PN} /var/${PN}
 
-	keepdir /var/{${PN}/{cache,download},{run,log}/${PN}}
-        fowners -R ${PN}:${PN} /var/{${PN}/{cache,download},{run,log}/${PN}}
+	keepdir /var/{${PN}/{cache,download},log/${PN}}
+        fowners -R ${PN}:${PN} /var/{${PN}/{cache,download},log/${PN}}
 
 	insinto /etc/${PN}
         insopts -m0660 -o ${PN} -g ${PN}
@@ -55,13 +55,25 @@ src_install() {
         insopts -m0644 -o root -g root
         newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
+	# wierd stuff ;-)
+        last_commit=$(git rev-parse HEAD)
+        echo ${last_commit} > version.txt
+
 	insinto /usr/share/${PN}
-        insopts -m0770 -o ${PN} -g ${PN}
-        diropts -m0770 -o ${PN} -g ${PN}
-        doins -r .
+        doins -r autoProcessTV cherrypy data lib sickbeard tests SickBeard.py version.txt
 }
 
 pkg_postinst() {
+
+	# we need to remove .git which old ebuild installed
+        if [[ -d "/usr/share/${PN}/.git" ]] ; then
+           ewarn "stale files from previous ebuild detected"
+           ewarn "/usr/share/${PN}/.git removed."
+           ewarn "To ensure proper operation, you should unmerge package and remove directory /usr/share/${PN} and then emerge package again"
+           ewarn "Sorry for the inconvenience"
+           rm -Rf "/usr/share/${PN}/.git"
+        fi	
+
         python_mod_optimize /usr/share/${PN}
 
         elog "SickBeard has been installed with data directories in /var/${PN}"

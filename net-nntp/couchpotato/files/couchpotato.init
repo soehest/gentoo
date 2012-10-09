@@ -12,9 +12,8 @@ pidfile="$run_dir/couchpotato.pid"
 etc_dir="/etc/couchpotato"
 var_dir="/var/couchpotato"
 log_dir="/var/log/couchpotato"
-code_dir="/usr/share/couchpotato"
-program="$code_dir/CouchPotato.py"
-bin=`which $python_bin`
+program="$CODE_DIR/CouchPotato.py"
+bin=`which $PYTHON_BIN`
 
 check_config() {
 	
@@ -25,19 +24,21 @@ check_config() {
 	# Permission stuff. Should ensure that the daemon user always have write permissions.
 	# Quick and ugly but should get the job done.
 
-	chown -R ${user}:${group} "${run_dir}"
-        chown -R ${user}.${group} "${var_dir}"
-	chown -R ${user}.${group} "${etc_dir}"
-	chown -R ${user}.${group} "${code_dir}"
+	chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+	chown -R ${USER}.${GROUP} "${etc_dir}"
+	if [ "${WEBUPDATER}" = "YES" ]; then
+                chown -R ${USER}.${GROUP} "${CODE_DIR}"
+        fi
 }
 
 start() {
 	check_config
 
         ebegin "Starting CouchPotato"
-        start-stop-daemon --start --pidfile ${pidfile} -u ${user} -g ${group}\
+        start-stop-daemon --start --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
 	--exec ${bin} ${program} -- \
-	--daemon --pid_file ${pidfile} --data_dir ${var_dir} --config_file ${config_file}
+	--daemon --pid_file ${pidfile} --data_dir ${var_dir} --config_file ${CONFIG_FILE}
         eend $?
 }
 
@@ -45,9 +46,4 @@ stop() {
         ebegin "Stopping CouchPotato"
         start-stop-daemon --stop --pidfile ${pidfile} --retry 15
         eend $?
-}
-
-restart() {
-        stop
-        start
 }

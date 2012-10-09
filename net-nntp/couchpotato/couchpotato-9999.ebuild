@@ -49,12 +49,20 @@ src_install() {
         newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	insinto /usr/share/${PN}
-        insopts -m0770 -o ${PN} -g ${PN}
-        diropts -m0770 -o ${PN} -g ${PN}
-        doins -r .
+        doins -r couchpotato libs CouchPotato.py version.py 
 }
 
 pkg_postinst() {
+
+	# we need to remove .git which old ebuild installed
+        if [[ -d "/usr/share/${PN}/.git" ]] ; then
+           ewarn "stale files from previous ebuild detected"
+           ewarn "/usr/share/${PN}/.git removed."
+           ewarn "To ensure proper operation, you should unmerge package and remove directory /usr/share/${PN} and then emerge package again"
+           ewarn "Sorry for the inconvenience"
+           rm -Rf "/usr/share/${PN}/.git"
+        fi	
+
         python_mod_optimize /usr/share/${PN}
 
         elog "Couchpotato has been installed with data directories in /var/${PN}"

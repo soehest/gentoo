@@ -7,12 +7,12 @@ depend() {
         need net
 }
 
-run_dir="/var/run/sickbeard"
-pidfile="$run_dir/sickbeard.pid"
-etc_dir="/etc/sickbeard"
-var_dir="/var/sickbeard"
-log_dir="/var/log/sickbeard"
-program="$CODE_DIR/SickBeard.py"
+run_dir="/var/run/maraschino"
+pidfile="$run_dir/maraschino.pid"
+var_dir="/var/maraschino"
+log_dir="/var/log/maraschino"
+log_file="maraschino.log"
+program="$CODE_DIR/Maraschino.py"
 bin=`which $PYTHON_BIN`
 
 check_config() {
@@ -24,27 +24,26 @@ check_config() {
 	# Permission stuff. Should ensure that the daemon user always have write permissions.
 	# Quick and ugly but should get the job done.
 
-	chown -R ${USER}:${GROUP} "${run_dir}"
-        chown -R ${USER}.${GROUP} "${var_dir}"
-	chown -R ${USER}.${GROUP} "${etc_dir}"
+        chown -R ${USER}:${GROUP} "${run_dir}"
+	chown -R ${USER}.${GROUP} "${var_dir}"
 	chown -R ${USER}.${GROUP} "${log_dir}"
 	if [ "${WEBUPDATER}" = "YES" ]; then
-                chown -R ${USER}.${GROUP} "${CODE_DIR}"
-        fi
+		chown -R ${USER}.${GROUP} "${CODE_DIR}"
+	fi
 }
 
 start() {
 	check_config
 
-        ebegin "Starting SickBeard"
+        ebegin "Starting Maraschino"
         start-stop-daemon --start --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
 	--exec ${bin} ${program} -- \
-	--daemon --pidfile ${pidfile} --datadir ${var_dir} --nolaunch --config ${CONFIG_FILE} --port ${PORT}
+	-d --pidfile=${pidfile} --log=${log_dir}/${log_file} --datadir ${var_dir} --port ${PORT}
         eend $?
 }
 
 stop() {
-        ebegin "Stopping SickBeard"
-        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
+        ebegin "Stopping Maraschino"
+        start-stop-daemon --stop --pidfile ${pidfile}
         eend $?
 }

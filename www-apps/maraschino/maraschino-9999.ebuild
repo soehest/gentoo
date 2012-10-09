@@ -6,12 +6,12 @@ EAPI=4
 
 PYTHON_DEPEND="2:2.6"
 
-EGIT_REPO_URI="https://github.com/rembo10/headphones.git"
+EGIT_REPO_URI="https://github.com/mrkipling/maraschino.git"
 
 inherit eutils user git-2 python
 
-DESCRIPTION="Automatic music downloader for SABnzbd"
-HOMEPAGE="https://github.com/rembo10/headphones#readme"
+DESCRIPTION="web frontend for sabnzbd, couchpotato, sickbeard headphones and xbmc"
+HOMEPAGE="http://www.maraschinoproject.com"
 
 LICENSE="GPL-2" # only
 SLOT="0"
@@ -23,28 +23,24 @@ pkg_setup() {
         python_set_active_version 2
         python_pkg_setup
 
-        # Create headphones group
+        # Create maraschino group
         enewgroup ${PN}
-        # Create headphones user, put in headphones group
+        # Create maraschino user, put in maraschino group
         enewuser ${PN} -1 -1 -1 ${PN}
 }
 
 src_install() {
-	dodoc API_REFERENCE README.md TODO
+	dodoc AUTHORS README.md
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
         newinitd "${FILESDIR}/${PN}.init" ${PN}
 	
 	# Location of log and data files
 	keepdir /var/${PN}
-	fowners -R ${PN}:${PN} /var/${PN}
+        fowners -R ${PN}:${PN} /var/${PN}
 
-	keepdir /var/{${PN}/{cache,download},log/${PN}}
-        fowners -R ${PN}:${PN} /var/{${PN}/{cache,download},log/${PN}}
-
-	insinto /etc/${PN}
-        insopts -m0660 -o ${PN} -g ${PN}
-        doins "${FILESDIR}/${PN}.ini"
+	keepdir /var/{${PN}/cache,log/${PN}}
+        fowners -R ${PN}:${PN} /var/{${PN}/cache,log/${PN}}
 
 	# Rotation of log files
         insinto /etc/logrotate.d
@@ -53,37 +49,39 @@ src_install() {
 
 	# wierd stuff ;-)
         last_commit=$(git rev-parse HEAD)
-        echo ${last_commit} > version.txt
+        echo -n ${last_commit} > Version.txt
+	insinto /var/${PN}
+	doins Version.txt
 
 	insinto /usr/share/${PN}
-        doins -r bs4 cherrypy data headphones html5lib lib mako Headphones.py version.txt
+        doins -r lib maraschino modules static templates Maraschino.py mobile.py
 }
 
 pkg_postinst() {
 	
 	# we need to remove .git which old ebuild installed
-        if [[ -d "/usr/share/${PN}/.git" ]] ; then
-           ewarn "stale files from previous ebuild detected"
+	if [[ -d "/usr/share/${PN}/.git" ]] ; then
+	   ewarn "stale files from previous ebuild detected"
            ewarn "/usr/share/${PN}/.git removed."
-           ewarn "To ensure proper operation, you should unmerge package and remove directory /usr/share/${PN} and then emerge package again"
-           ewarn "Sorry for the inconvenience"
-           rm -Rf "/usr/share/${PN}/.git"
-        fi
+	   ewarn "To ensure proper operation, you should unmerge package and remove directory /usr/share/${PN} and then emerge package again"
+	   ewarn "Sorry for the inconvenience"
+	   rm -Rf "/usr/share/${PN}/.git"
+        fi	
 	
         python_mod_optimize /usr/share/${PN}
 
-        elog "Headphones has been installed with data directories in /var/${PN}"
+        elog "Maraschino has been installed with data directories in /var/${PN}"
 	elog
 	elog "New user/group ${PN}/${PN} has been created"
-        elog
-	elog "Config file is located in /etc/${PN}/${PN}.ini"
 	elog
         elog "Please configure /etc/conf.d/${PN} before starting as daemon!"
-        elog
+        elog "Port setting in /etc/conf.d/${PN} has priority over the port set in webinterface"
+	elog
         elog "Start with ${ROOT}etc/init.d/${PN} start"
-        elog "Visit http://<host ip>:8181 to configure Headphones"
-        elog "Default web username/password : headphones/secret"
-        elog
+        elog "Visit http://<host ip>:7000 to configure Maraschino"
+        elog 
+	elog "Security note:"
+	elog "There is no default username/password, so it is important that you configure maraschino using the web interface!"
 }
 
 pkg_postrm() {

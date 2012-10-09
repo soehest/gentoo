@@ -12,9 +12,8 @@ pidfile="$run_dir/headphones.pid"
 etc_dir="/etc/headphones"
 var_dir="/var/headphones"
 log_dir="/var/log/headphones"
-code_dir="/usr/share/headphones"
-program="$code_dir/Headphones.py"
-bin=`which $python_bin`
+program="$CODE_DIR/Headphones.py"
+bin=`which $PYTHON_BIN`
 
 check_config() {
 	
@@ -25,20 +24,22 @@ check_config() {
 	# Permission stuff. Should ensure that the daemon user always have write permissions.
 	# Quick and ugly but should get the job done.
 
-	chown -R ${user}:${group} "${run_dir}"
-        chown -R ${user}.${group} "${var_dir}"
-	chown -R ${user}.${group} "${etc_dir}"
-	chown -R ${user}.${group} "${log_dir}"
-	chown -R ${user}.${group} "${code_dir}"
+	chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+	chown -R ${USER}.${GROUP} "${etc_dir}"
+	chown -R ${USER}.${GROUP} "${log_dir}"
+	if [ "${WEBUPDATER}" = "YES" ]; then
+                chown -R ${USER}.${GROUP} "${CODE_DIR}"
+        fi
 }
 
 start() {
 	check_config
 
         ebegin "Starting Headphones"
-        start-stop-daemon --start --pidfile ${pidfile} -u ${user} -g ${group}\
+        start-stop-daemon --start --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
 	--exec ${bin} ${program} -- \
-	-d --pidfile ${pidfile} --datadir ${var_dir} --nolaunch --config ${config_file}
+	-d --pidfile ${pidfile} --datadir ${var_dir} --nolaunch --config ${CONFIG_FILE} --port ${PORT}
         eend $?
 }
 
@@ -46,9 +47,4 @@ stop() {
         ebegin "Stopping Headphones"
         start-stop-daemon --stop --pidfile ${pidfile}
         eend $?
-}
-
-restart() {
-        stop
-        start
 }

@@ -7,6 +7,7 @@ This Git repository contains experimental ebuilds for [Gentoo Linux](http://www.
 - [couchpotato](http://couchpota.to/)
 - [sickbeard](http://sickbeard.com/)
 - [headphones](https://github.com/rembo10/headphones)
+- [maraschino](https://github.com/mrkipling/maraschino.git)
 
 sabnzbd and yenc has been forked from the [sunrise](http://overlays.gentoo.org/proj/sunrise) overlay and are both created by Sébastien P.
 
