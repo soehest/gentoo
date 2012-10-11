@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-libs/libcec/ChangeLog,v 1.14 2012/09/15 12:44:39 thev00d00 Exp $
 
+*libcec-2.0.1 (12 Oct 2012)
+  12 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  +libcec-2.0.1.ebuild, -libcec-2.0.0.ebuild
+  Version bump.
+
+
 *libcec-2.0.0 (10 Oct 2012)
   10 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
   +libcec-2.0.0.ebuild, -libcec-1.9.0.ebuild, -libcec-1.8.1-r1.ebuild
