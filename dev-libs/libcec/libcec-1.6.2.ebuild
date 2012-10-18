@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libcec/libcec-1.6.2.ebuild,v 1.3 2012/05/22 22:53:41 jdhore Exp $
+# ChangeLog for net-nntp/couchpotato
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
 
 EAPI="4"
 
