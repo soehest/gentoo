@@ -1,6 +1,6 @@
-# ChangeLog for dev-libs/libcec
+# ChangeLog for net-nntp/couchpotato
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libcec/ChangeLog,v 1.14 2012/09/15 12:44:39 thev00d00 Exp $
+# $Header: $
 
 *libcec-2.0.1 (16 Oct 2012)
   16 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
