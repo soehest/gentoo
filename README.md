@@ -35,4 +35,8 @@ I take no responsibility if usage of these ebuilds makes your computer burn, cra
 
 As mentioned sabnzbd has been forked and quite some changes have been made. I decided to fork it as the sunrise overlay seemed to be stalled/unmaintained. After this fork the original maintainer came to life and has agreed to maintain his build so hopefully it will go live into portage soon.
 
+**Contact Info**
+
+**[http://eth0.dk](http://eth0.dk/)**
+
 **soehest**
