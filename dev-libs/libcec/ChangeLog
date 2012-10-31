@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*libcec-2.0.3 (31 Oct 2012)
+  31 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  +libcec-2.0.3.ebuild, -libcec-2.0.2.ebuild
+  Version bump.
+
 *libcec-2.0.2 (16 Oct 2012)
   16 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
   +libcec-2.0.2.ebuild, -libcec-2.0.1.ebuild
