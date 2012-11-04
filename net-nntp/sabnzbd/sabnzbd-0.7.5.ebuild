@@ -65,9 +65,7 @@ src_install() {
 
 	# Add themes & code into /usr/share
 	insinto /usr/share/${PN}
-	insopts -m0755 -o root -g root
-	diropts -m0755 -o root -g root
-	doins -r cherrypy email gntp interfaces locale po sabnzbd SABnzbd.py tools util
+	doins -r cherrypy email gntp icons interfaces locale po sabnzbd SABnzbd.py tools util
 }
 
 pkg_postinst() {
