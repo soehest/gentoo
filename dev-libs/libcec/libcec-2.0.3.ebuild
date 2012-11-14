@@ -1,5 +1,5 @@
-# ChangeLog for net-nntp/couchpotato
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
