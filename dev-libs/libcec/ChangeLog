@@ -1,6 +1,11 @@
-# ChangeLog for net-nntp/couchpotato
+# ChangeLog for dev-libs/libcec
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*libcec-9999 (14 Nov 2012)
+
+  14 Nov 2012; soehest +libcec-9999.ebuild:
+  libcec-9999 added
 
 *libcec-2.0.3 (31 Oct 2012)
   31 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
@@ -89,4 +94,3 @@
   01 Apr 2012; Ian Whyman <thev00d00@gentoo.org> +libcec-1.5.2.ebuild,
   +metadata.xml:
   New ebuild for libcec
-
