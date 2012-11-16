@@ -12,7 +12,7 @@ SRC_URI="http://github.com/Pulse-Eight/${PN}/tarball/master -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="static-libs"
 
 RDEPEND=">=sys-fs/udev-151"
