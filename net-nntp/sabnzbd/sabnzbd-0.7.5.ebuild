@@ -50,7 +50,7 @@ src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
 	keepdir /var/{${PN}/{admin,backup,cache,complete,download,dirscan},log/${PN}}
-        fowners -R ${PN}:${PN} /var/{${PN}/{,admin,backup,cache,complete,download,dirscan},log/${PN}}
+	fowners -R ${PN}:${PN} /var/{${PN}/{,admin,backup,cache,complete,download,dirscan},log/${PN}}
 
 	# Default configuration file and directory
 
@@ -74,8 +74,8 @@ pkg_postinst() {
 	elog "SABnzbd has been installed with default directories in /var/${PN}"
 	elog
 	elog "New user/group ${PN}/${PN} has been created"
-        elog
-        elog "Config file is located in /etc/${PN}/${PN}.ini"
+	elog
+	elog "Config file is located in /etc/${PN}/${PN}.ini"
 	elog
 	elog "Please configure /etc/conf.d/${PN} before starting as daemon!"
 	elog

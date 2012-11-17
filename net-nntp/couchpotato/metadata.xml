@@ -2,7 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>drunejensen@gmail.com</email>
+		<email>daniel@eth0.dk</email>
+		<name>Daniel Rune Jensen</name>
 	</maintainer>
-	<longdescription>CouchPotato (CP) V2 is an automatic NZB and torrent downloader for movies</longdescription>
+	<longdescription>CouchPotatoServer (CPS) V2 is an automatic NZB and torrent downloader for movies</longdescription>
 </pkgmetadata>

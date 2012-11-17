@@ -4,26 +4,25 @@
 
 *sabnzbd-0.7.5 (04 Nov 2012)
 
-  04 Nov 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +sabnzbd-0.7.5.ebuild, -sabnzbd-0.7.4.ebuild, -sabnzbd-0.7.3.ebuild
+  04 Nov 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +sabnzbd-0.7.5.ebuild, -sabnzbd-0.7.4.ebuild, -sabnzbd-0.7.3.ebuild:
   Version bump.
 
 *sabnzbd-0.7.4 (05 Oct 2012)
 
-  05 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +sabnzbd-0.7.4.ebuild
+  05 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +sabnzbd-0.7.4.ebuild:
   Version bump.
 
 *sabnzbd-0.7.3 (14 Aug 2012)
 
-  14 Aug 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  -sabnzbd-0.7.2.ebuild, +sabnzbd-0.7.3.ebuild
+  14 Aug 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  -sabnzbd-0.7.2.ebuild, +sabnzbd-0.7.3.ebuild:
   Version bump. sabnzbd.ini file moved to /etc/sabnzbd/sabnzbd.ini. 
   Sabnzbd runtime directories moved to /var/sabnzbd/ Changes to
   /etc/conf.d/sabnzbd.conf, /etc/init.d/sabnzbd and /etc/sabnzbd.ini.
   Permission fixes.
   
-
 *sabnzbd-0.7.2 (20 Jul 2012)
 
   20 Jul 2012; Sébastien Picavet (SebastienP) sebastien.picavet@gmail.com

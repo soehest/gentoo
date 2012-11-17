@@ -2,7 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>drunejensen@gmail.com</email>
+		<email>daniel@eth0.dk</email>
+		<name>Daniel Rune Jensen</name>
 	</maintainer>
 	<longdescription>Automatic music downloader for SABnzbd</longdescription>
 </pkgmetadata>

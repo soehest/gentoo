@@ -2,16 +2,16 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*headphones-9999 (09 Oct 2012)
-  09 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  09 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  headphones-9999.ebuild:
   Changes to files/headphones.conf, files/headphones.init and
   headphones-9999.ebuild: Ebuild maintance and fix for missing 
   update notification.
 
 *headphones-9999 (25 Aug 2012)
 
-  25 Aug 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +headphones-9999, +metadata.xml, +files/headphones.conf,
+  25 Aug 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +headphones-9999.ebuild, +metadata.xml, +files/headphones.conf,
   +files/headphones.ini, +files/headphones.init,
   +files/headphones.logrotate
   Initial commit of headphones-9999 ebuild.

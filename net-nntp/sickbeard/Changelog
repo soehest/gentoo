@@ -2,16 +2,16 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*sickbeard-9999 (10 Oct 2012)
-  10 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  10 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  sickbeard-9999.ebuild:
   Changes to files/sickbeard.conf, files/sickbeard.init and
   sickbeard-9999.ebuild: Ebuild maintance and fix for missing
   update notification.
 
 *sickbeard-9999 (25 Aug 2012)
 
-  25 Aug 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +sickbeard-9999, +metadata.xml, +files/sickbeard.conf,
+  25 Aug 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +sickbeard-9999.ebuild, +metadata.xml, +files/sickbeard.conf,
   +files/sicbkeard.ini, +files/sickbeard.init,
   +files/sickbeard.logrotate
   Initial commit of sickbeard-9999 ebuild.
