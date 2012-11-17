@@ -4,30 +4,30 @@
 
 *libcec-9999 (14 Nov 2012)
 
-  14 Nov 2012; soehest +libcec-9999.ebuild:
-  libcec-9999 added
+  14 Nov 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +libcec-9999.ebuild:
+  libcec-9999 added.
 
 *libcec-2.0.3 (31 Oct 2012)
-  31 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +libcec-2.0.3.ebuild, -libcec-2.0.2.ebuild
-  Version bump.
+  31 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +libcec-2.0.3.ebuild, -libcec-2.0.2.ebuild:
+  Version bump. Purge old ebuilds.
 
 *libcec-2.0.2 (16 Oct 2012)
-  16 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +libcec-2.0.2.ebuild, -libcec-2.0.1.ebuild
-  Version bump.
+  16 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +libcec-2.0.2.ebuild, -libcec-2.0.1.ebuild:
+  Version bump. Purge old ebuilds.
 
 *libcec-2.0.1 (12 Oct 2012)
-  12 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
-  +libcec-2.0.1.ebuild, -libcec-2.0.0.ebuild
-  Version bump.
-
+  12 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +libcec-2.0.1.ebuild, -libcec-2.0.0.ebuild:
+  Version bump. Purge old ebuilds.
 
 *libcec-2.0.0 (10 Oct 2012)
-  10 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  10 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
   +libcec-2.0.0.ebuild, -libcec-1.9.0.ebuild, -libcec-1.8.1-r1.ebuild
-  -files/libcec-1.8.1-eintr-retry.patch.
-  Version bump.
+  -files/libcec-1.8.1-eintr-retry.patch:
+  Version bump. Purge old ebuilds.
 
 *libcec-1.9.0 (15 Sep 2012)
 
