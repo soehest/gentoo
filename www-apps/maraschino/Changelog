@@ -2,15 +2,15 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*maraschino-9999 (09 Oct 2012)
-  09 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  09 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  maraschino-9999.ebuild:
   Moved to www-apps. Changes to files/maraschino.conf, 
   files/maraschino.init, maraschino-9999.ebuild and metadata.xml: 
   Ebuild maintance and fix for missing update notification.
 
 *maraschino-9999 (02 Oct 2012)
 
-  02 Oct 2012; Daniel Rune Jensen (soehest) drunejensen@gmail.com
+  02 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
   +maraschino-9999.ebuild, +metadata.xml, +files/maraschino.conf,
   +files/maraschino.init, +files/maraschino.logrotate
   Initial commit of maraschino-9999 ebuild requested on email 
