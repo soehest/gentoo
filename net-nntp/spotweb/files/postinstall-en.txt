@@ -1,0 +1,11 @@
+Run 'install.php' from your browser until everything is 'OK'. Fix the parts
+which aren't OK.
+Follow the wizard and perform the instructions as given by the wizard.
+
+== Troubleshooting ==
+When a white page appears instead of your Spotweb installation, this usually
+indicates an typing error in either
+your ownsettings.php, dbsettings.inc.php or a configuration error in your
+webserver.
+
+Please consult your Apache's errorlog for the exact error and fix it.

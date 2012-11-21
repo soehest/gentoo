@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>daniel@eth0.dk</email>
+		<name>Daniel Rune Jensen</name>
+	</maintainer>
+	<longdescription>Spotweb is a webbased usenet binary resource indexer based on the protocol and development done by Spotnet</longdescription>
+</pkgmetadata>
+

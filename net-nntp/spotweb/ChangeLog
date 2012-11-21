@@ -1,0 +1,11 @@
+# ChangeLog for net-nntp/spotweb
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*spotweb-9999 (21 Nov 2012)
+
+  21 Nov 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +spotweb-9999.ebuild, +files/.htaccess, +files/create_db.sql,
+  +files/postinstall-en.txt, +metadata.xml:
+  Initial commit from bug #439462 created and requested by Russell York.
+
