@@ -10,6 +10,7 @@ This Git repository contains experimental ebuilds for [Gentoo Linux](http://www.
 - [maraschino](https://github.com/mrkipling/maraschino.git)
 - [libcec](http://libcec.pulse-eight.com/)
 - [spotweb](https://github.com/spotweb/spotweb)
+- [moviegrabber](http://sourceforge.net/projects/moviegrabber/)
 
 sabnzbd and yenc has been forked from the [sunrise](http://overlays.gentoo.org/proj/sunrise) overlay and are both created by Sébastien P.
 

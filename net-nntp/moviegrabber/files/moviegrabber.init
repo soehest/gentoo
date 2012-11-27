@@ -1,0 +1,50 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/moviegrabber"
+pidfile="$run_dir/moviegrabber.pid"
+var_dir="/var/moviegrabber"
+log_dir="/var/log/moviegrabber"
+code_dir="/usr/share/moviegrabber"
+program="$code_dir/MovieGrabber.py"
+bin=`which $python_bin`
+
+check_config() {
+	if [ ! -d "${run_dir}" ]; then
+                mkdir "${run_dir}"
+        fi
+
+        # Permission stuff. Should ensure that the daemon user always have write permissions.
+        # Quick and ugly but should get the job done.
+
+        chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+        chown -R ${USER}.${GROUP} "${log_dir}"
+}
+
+
+start() {
+	check_config
+        ebegin "Starting Moviegrabber"
+        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
+	--exec ${bin} ${program} -d ${code_dir} -- \
+	-p ${PORT}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Moviegrabber"
+        start-stop-daemon --stop --pidfile ${pidfile}
+        eend $?
+}
+
+restart() {
+        stop
+        start
+}

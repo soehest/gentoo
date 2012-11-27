@@ -1,0 +1,11 @@
+# ChangeLog for net-nntp/moviegrabber
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*moviegrabber-2.1.9 (27 Nov 2012)
+
+  27 Nov 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
+  +moviegrabber-2.1.9.ebuild, +files/config.ini, +files/moviegrabber.conf,
+  +files/moviegrabber.init, +files/moviegrabber.logrotate, +metadata.xml:
+  Initial commit requested by Russell York. References bug #424818
+
