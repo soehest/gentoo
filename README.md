@@ -28,6 +28,8 @@ To update the overlay use the following command
 layman -S
 ```
 
+More info on Gentoo Layman can be found [here](http://www.gentoo.org/proj/en/overlays/userguide.xml)
+
 To install one of the ebuilds from this overlay you need to add it to /etc/portage/package.keyword  
 
 ```ruby
@@ -35,8 +37,6 @@ echo "net-nntp/sabnzbd" >> /etc/portage/package.keywords
 echo "net-nntp/yenc" >> /etc/portage/package.keywords
 emerge sabnzbd
 ```
-
-More info on Gentoo Layman can be found [here](http://www.gentoo.org/proj/en/overlays/userguide.xml)
 
 I take no responsibility if usage of these ebuilds makes your computer burn, crash, or start downloading naughty movies or country music. These builds are higly experimental. What works for me may not work for you. Now you have been warned!
 
