@@ -1,6 +1,10 @@
 # ChangeLog for net-nntp/sickbeard
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Mar 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
+  sickbeard-9999.ebuild, -Changelog:
+  Added python sqlite check. (Thanks Benny)
 
   10 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
   sickbeard-9999.ebuild:
