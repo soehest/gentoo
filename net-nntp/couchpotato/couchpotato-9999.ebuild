@@ -1,10 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
 
 PYTHON_DEPEND="2:2.6"
+PYTHON_USE_WITH="sqlite"
 
 EGIT_REPO_URI="https://github.com/RuudBurger/CouchPotatoServer.git"
 
