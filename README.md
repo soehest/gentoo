@@ -3,12 +3,12 @@
 This Git repository contains experimental ebuilds for [Gentoo Linux](http://www.gentoo.org/). At this time it consists of the following ebuilds
 
 - [sabnzbd](http://sabnzbd.org/)
-- [yenc](http://www.golug.it/yenc.html)
+- ~~[yenc](http://www.golug.it/yenc.html)~~ (Using portage now)
 - [couchpotato](http://couchpota.to/)
 - [sickbeard](http://sickbeard.com/)
 - [headphones](https://github.com/rembo10/headphones)
 - [maraschino](https://github.com/mrkipling/maraschino.git)
-- [libcec](http://libcec.pulse-eight.com/)
+- ~~[libcec](http://libcec.pulse-eight.com/)~~ (Using portage now)
 - [spotweb](https://github.com/spotweb/spotweb)
 - [moviegrabber](http://sourceforge.net/projects/moviegrabber/)
 
