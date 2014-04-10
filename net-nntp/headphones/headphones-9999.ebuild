@@ -31,7 +31,7 @@ pkg_setup() {
 }
 
 src_install() {
-	dodoc API_REFERENCE README.md TODO
+	dodoc API_REFERENCE README.md 
 
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
@@ -57,7 +57,7 @@ src_install() {
 	echo ${last_commit} > version.txt
 
 	insinto /usr/share/${PN}
-	doins -r bs4 cherrypy data headphones html5lib lib mako Headphones.py version.txt
+	doins -r data headphones lib Headphones.py 
 }
 
 pkg_postinst() {
