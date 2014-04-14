@@ -57,7 +57,7 @@ src_install() {
 	echo ${last_commit} > version.txt
 
 	insinto /usr/share/${PN}
-	doins -r data headphones lib Headphones.py 
+	doins -r data headphones lib Headphones.py version.txt
 }
 
 pkg_postinst() {
