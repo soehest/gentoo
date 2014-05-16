@@ -1,6 +1,10 @@
 # ChangeLog for www-apps/maraschino
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 May 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
+  maraschino-9999.ebuild, -Changelog:
+  User reported bug (Thanks Fenix4k) about missing module xbmcmm. Fixed.
 
   09 Oct 2012; Daniel Rune Jensen (soehest) <daniel@eth0.dk>
   maraschino-9999.ebuild:

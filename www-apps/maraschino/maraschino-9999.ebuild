@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -54,7 +54,7 @@ src_install() {
 	doins Version.txt
 
 	insinto /usr/share/${PN}
-	doins -r lib maraschino modules static templates Maraschino.py mobile.py
+	doins -r lib maraschino modules static templates Maraschino.py mobile.py xbmcmm.py
 }
 
 pkg_postinst() {
