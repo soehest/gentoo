@@ -1,6 +1,11 @@
 # ChangeLog for net-nntp/spotweb
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  23 Aug 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
+  spotweb-9999.ebuild, files/create_db.sql:
+  Fixes: Should now install again. More work is needed so use this with
+  caution!
 
 *spotweb-9999 (21 Nov 2012)
 

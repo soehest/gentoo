@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS spotweb;
 GRANT ALL ON spotweb.* TO spotweb@localhost IDENTIFIED BY "spotweb";
 FLUSH PRIVILEGES;
