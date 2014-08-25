@@ -1,6 +1,18 @@
-Run 'install.php' from your browser until everything is 'OK'. Fix the parts
-which aren't OK.
-Follow the wizard and perform the instructions as given by the wizard.
+If this is a first time install you will probabaly want to create the spotweb
+mysql database. Use: Emerge --config spotweb to create it. This creates an
+empty database called spotweb. You can also create a empty database manually.
+The install script ran at the next step will fill the tables up.
+
+Visit http://<host ip>/spotweb/install.php in a browser to install/configure 
+spotweb. Fix the parts which aren't OK. Follow the wizard and perform the 
+instructions as given by the wizard. Please pay attention when adding user or
+you risk leaving the system wide open (public mode)
+
+Note:
+The spotweb config file (dbsettings.inc.php) and cache dir was created with 
+default permission according to /etc/vhosts/webapp-config. If these does not 
+suit you edit the file and emerge again.
+
 
 == Troubleshooting ==
 When a white page appears instead of your Spotweb installation, this usually
