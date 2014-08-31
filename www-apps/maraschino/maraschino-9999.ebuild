@@ -29,6 +29,10 @@ pkg_setup() {
 	enewuser ${PN} -1 -1 -1 ${PN}
 }
 
+src_prepare() {
+	epatch "${FILESDIR}"/sgmllib3.py.patch
+}
+
 src_install() {
 	dodoc AUTHORS README.md
 

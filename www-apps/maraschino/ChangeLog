@@ -2,6 +2,10 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  31 Aug 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
+  maraschino-9999.ebuild, +files/sgmllib3.py.patch:
+  Added patch to remove the invalid syntax error warning when installing.
+
   16 May 2014; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
   maraschino-9999.ebuild, -Changelog:
   User reported bug (Thanks Fenix4k) about missing module xbmcmm. Fixed.
