@@ -1,5 +1,5 @@
 #!/sbin/runscript
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -32,9 +32,9 @@ check_config() {
 start() {
 	check_config
         ebegin "Starting Moviegrabber"
-        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
-	--exec ${bin} ${program} -d ${code_dir} -- \
-	-p ${PORT}
+		start-stop-daemon --start --pidfile ${pidfile} -u ${USER} -g ${GROUP}\
+        --exec ${bin} ${program} -- \
+        --daemon --pidfile ${pidfile} --db ${var_dir}/db --config ${CONFIG_DIR} --port ${PORT}
         eend $?
 }
 

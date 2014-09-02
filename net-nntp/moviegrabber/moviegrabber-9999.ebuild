@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,14 +8,13 @@ EAPI="4"
 PYTHON_DEPEND="2:2.6"
 PYTHON_USE_WITH="sqlite"
 
-inherit eutils python user
+inherit eutils python user git-2
 
 MY_P="${P/sab/SAB}"
 
-DESCRIPTION="MovieGrabber is a fully automated way of downloading movie from
-usenet"
+DESCRIPTION="MovieGrabber is a fully automated way of downloading movie from usenet"
 HOMEPAGE="http://sourceforge.net/projects/moviegrabber/"
-SRC_URI="mirror://sourceforge/moviegrabber/releases/${PN}-src-${PV}.zip"
+EGIT_REPO_URI="https://github.com/binhex/moviegrabber.git"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,7 +22,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
-	dev-python/imaging
+	>=dev-python/imaging-1.1.7-r4
 "
 
 S="${WORKDIR}/${PN}"
@@ -65,8 +64,8 @@ src_install() {
 	doins -r configs db images
 
 	# ugly stuff can be found here. Someone should report upstream.
-	dosym /var/${PN}/db /usr/share/${PN}/db
-	dosym /var/${PN}/configs /usr/share/${PN}/configs
+	#dosym /var/${PN}/db /usr/share/${PN}/db
+	#dosym /var/${PN}/configs /usr/share/${PN}/configs
 	dosym /var/${PN}/images /usr/share/${PN}/images
 }
 
