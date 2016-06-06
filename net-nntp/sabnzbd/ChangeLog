@@ -2,6 +2,15 @@
 # Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*sabnzbd-1.0.3 (06 Jun 2016)
+
+  06 Jun 2016; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
+  +sabnzbd-1.0.3.ebuild:
+
+
+  Version bump.
+
+
 *sabnzbd-1.0.0 (20 Mar 2016)
 
   20 Mar 2016; Daniel Rune Jensen (soehest) <drunejensen@gmail.com>
