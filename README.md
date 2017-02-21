@@ -1,3 +1,7 @@
+## Notice: 21-02-2017 ##
+## Repo is currently not maintained. I have not been using Gentoo Linux for 3-4 years, and can not find the time to keep up with python changes. Thanks to all who participated. ##
+
+
 # Experimental Gentoo Linux Ebuilds #
 
 This Git repository contains experimental ebuilds for [Gentoo Linux](http://www.gentoo.org/). At this time it consists of the following ebuilds
